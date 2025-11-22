@@ -4,13 +4,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-
-    public static ArrayList history = new ArrayList();
+    
+    // se cambia para eliminar Code Smell de ArrayList por List<String>
+    public static List<String> history = new ArrayList();
     public static String last = "";
     public static int counter = 0;
     public static Random R = new Random();
@@ -80,8 +81,9 @@ public class Main {
             if ("%".equals(op)) {
                 return A % B;
             }
+            // manejo de excepcion con mensaje corregido
         } catch (Exception e) {
-
+            System.err.println("Error en operación aritmética" + e.getMessage());
         }
 
         try {
@@ -90,7 +92,9 @@ public class Main {
             if (R.nextInt(100) == 42) {
                 return ((Double) o1) + ((Double) o2);
             }
+            // manejo de excepcion con mensaje corregido
         } catch (Exception e) {
+            System.err.println("Error en lógica aleatoria" + e.getMessage());
         }
         return 0;
     }
