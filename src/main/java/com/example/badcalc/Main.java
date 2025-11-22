@@ -30,8 +30,8 @@ public class Main {
         }
     }
 
-    // CORREGIDO: Se eliminó Thread.sleep(0) innecesario que causaba un bug de fiabilidad 
-    // (bloque catch vacío al manejar InterruptedException). Además, se agregó validación 
+    // Cambio: Se eliminó Thread.sleep(0) innecesario que causaba un bug de fiabilidad 
+    // (En el bloque catch que estaba vacío al manejar InterruptedException).Se agregó validación 
     // para entradas negativas y cero, mejorando robustez y legibilidad.
     public static double badSqrt(double v) {
         if (v < 0) {
